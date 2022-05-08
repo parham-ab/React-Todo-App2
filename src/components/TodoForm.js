@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+// uuid
+import { v4 as uuidv4 } from "uuid";
 // icons
 import { SiAddthis } from "react-icons/si";
 // import { MdCloudDone } from "react-icons/md";
@@ -20,6 +22,10 @@ const TodoForm = (props) => {
   // changeHandler
   const changeHandler = (e) => {
     setInput(e.target.value);
+    props.onSubmit({
+      id: uuidv4(),
+      text: input,
+    });
   };
 
   return (
