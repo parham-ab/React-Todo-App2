@@ -1,0 +1,14 @@
+// mixins
+@import "mixins";
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Rubik:ital,wght@0,300;1,300&display=swap");
+// components styles
+// @import "";
+// styles
+*,
+*::after,
+*::before {
+  @include cssReseter;
+  font-family: "Quicksand", sans-serif;
+  font-family: "Rubik", sans-s;
+}
