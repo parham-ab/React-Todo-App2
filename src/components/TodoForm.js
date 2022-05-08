@@ -3,34 +3,32 @@ import React, { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // icons
 import { SiAddthis } from "react-icons/si";
-// import { MdCloudDone } from "react-icons/md";
-// components
-import TodoList from "./TodoList";
+import { MdCloudDone } from "react-icons/md";
 
 const TodoForm = (props) => {
   const [input, setInput] = useState("");
   const inputRef = useRef();
+  // changeHandler
+  const changeHandler = (e) => {
+    setInput(e.target.value);
+  };
   useEffect(() => {
     inputRef.current.focus();
   }, []);
   // submitHandler
   const submitHandler = (e) => {
     e.preventDefault();
-    // clear input
-    setInput("");
-  };
-  // changeHandler
-  const changeHandler = (e) => {
-    setInput(e.target.value);
     props.onSubmit({
       id: uuidv4(),
       text: input,
     });
+    // clear input
+    setInput("");
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
+      <div>
         <input
           type="text"
           name="text"
@@ -42,9 +40,8 @@ const TodoForm = (props) => {
         <button>
           <SiAddthis />
         </button>
-      </form>
-      <TodoList />
-    </div>
+      </div>
+    </form>
   );
 };
 

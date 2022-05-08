@@ -19,7 +19,7 @@ const TodoList = () => {
     <div>
       <h1>React Todo App</h1>
       <TodoForm onSubmit={addTodo} />
-      <Todo />
+      <Todo todos={todos} />
     </div>
   );
 };
