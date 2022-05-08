@@ -14,12 +14,16 @@ const TodoList = () => {
     const newTodo = [...todos, todo];
     setTodos(newTodo);
   };
-
+  // delete a todo from the list
+  const deleteHandler = (id) => {
+    const newValue = [...todos].filter((item) => item.id !== id);
+    setTodos(newValue);
+  };
   return (
     <div>
       <h1>React Todo App</h1>
       <TodoForm onSubmit={addTodo} />
-      <Todo todos={todos} />
+      <Todo todos={todos} deleteHandler={deleteHandler} />
     </div>
   );
 };

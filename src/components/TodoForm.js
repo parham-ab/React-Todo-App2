@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // icons
 import { SiAddthis } from "react-icons/si";
-import { MdCloudDone } from "react-icons/md";
 
 const TodoForm = (props) => {
   const [input, setInput] = useState("");
