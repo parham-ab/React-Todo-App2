@@ -29,7 +29,7 @@ const TodoForm = (props) => {
   return (
     <form onSubmit={submitHandler}>
       {!props.edit ? (
-        <div>
+        <div className="fieldContainer">
           <input
             type="text"
             name="text"
@@ -38,12 +38,12 @@ const TodoForm = (props) => {
             onChange={changeHandler}
             ref={inputRef}
           />
-          <button>
+          <button className="addBtn">
             <SiAddthis />
           </button>
         </div>
       ) : (
-        <div>
+        <div className="updateField">
           <input
             type="text"
             name="text"
@@ -52,7 +52,7 @@ const TodoForm = (props) => {
             onChange={changeHandler}
             ref={inputRef}
           />
-          <button>
+          <button className="updateBtn">
             <MdCloudDone />
           </button>
         </div>

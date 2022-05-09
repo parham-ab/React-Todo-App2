@@ -19,12 +19,20 @@ const Todo = ({ todos, deleteHandler, id, updateTodo }) => {
   }
 
   return todos.map((todo, index) => (
-    <div key={index}>
-      <div key={todo.id}>{todo.text}</div>
-      <MdModeEditOutline
-        onClick={() => setEdit({ id: todo.id, value: todo.text })}
-      />
-      <TiDelete onClick={() => deleteHandler(todo.id)} />
+    <div className="todo" key={index}>
+      <div className="todoText" key={todo.id}>
+        <p>{todo.text}</p>
+      </div>
+      <div>
+        <MdModeEditOutline
+          className="editBtn"
+          onClick={() => setEdit({ id: todo.id, value: todo.text })}
+        />
+        <TiDelete
+          className="deleteBtn"
+          onClick={() => deleteHandler(todo.id)}
+        />
+      </div>
     </div>
   ));
 };

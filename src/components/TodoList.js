@@ -31,14 +31,39 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <h1>React Todo App</h1>
-      <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        deleteHandler={deleteHandler}
-        updateTodo={updateTodo}
-      />
+    <div className="todoList">
+      <div className="header">
+        <h1>
+          React Todo App{" "}
+          <span style={{ fontSize: "1rem", color: "#959595" }}>
+            <sub>version.2</sub>
+          </span>
+        </h1>
+      </div>
+      <div>
+        <TodoForm onSubmit={addTodo} />
+        {todos.length === 0 && (
+          <div className="aboutMe">
+            <h1>
+              Made with <span style={{ color: "#d30000" }}>❤</span> by
+              <a
+                href="https://parham-ab.netlify.app/"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ color: "#666" }}
+              >
+                {" "}
+                Parham Abolghasemi
+              </a>
+            </h1>
+          </div>
+        )}
+        <Todo
+          todos={todos}
+          deleteHandler={deleteHandler}
+          updateTodo={updateTodo}
+        />
+      </div>
     </div>
   );
 };

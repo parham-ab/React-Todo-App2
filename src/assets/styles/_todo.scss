@@ -1,0 +1,63 @@
+.todo {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 50px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 9px;
+  box-shadow: #949494 0px 1px 2px 0px;
+  transition: all 0.3s;
+  &:nth-child(5n + 1) {
+    background: linear-gradient(
+      90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgb(123, 0, 200) 100%
+    );
+  }
+  &:nth-child(5n + 2) {
+    background: linear-gradient(
+      90deg,
+      rgb(255, 89, 12) 0%,
+      rgb(90, 0, 75) 100%
+    );
+  }
+  &:nth-child(5n + 3) {
+    background: linear-gradient(
+      90deg,
+      rgb(9, 83, 135) 0%,
+      rgba(17, 122, 255, 1) 100%
+    );
+  }
+  &:nth-child(5n + 4) {
+    background: linear-gradient(90deg, rgb(16, 25, 71) 0%, rgb(23, 72, 0) 100%);
+  }
+  &:nth-child(5n + 5) {
+    background: linear-gradient(
+      90deg,
+      rgb(42, 125, 136) 0%,
+      rgb(7, 38, 139) 100%
+    );
+  }
+  &:hover {
+    box-shadow: #0000009e -3px 4px 5px 0px;
+  }
+  .todoText {
+    overflow-wrap: anywhere;
+    p {
+      padding: 5px;
+    }
+  }
+  .deleteBtn {
+    color: #ff5757;
+  }
+  .editBtn {
+    color: #ffee78;
+  }
+}
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  transition: all 0.3s;
+}
