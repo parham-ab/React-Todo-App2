@@ -2,6 +2,8 @@ import React, { useState } from "react";
 // components
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
+// img
+import Pic from "../assets/img/pic1.svg";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -44,6 +46,7 @@ const TodoList = () => {
         <TodoForm onSubmit={addTodo} />
         {todos.length === 0 && (
           <div className="aboutMe">
+            <img loading="lazy" src={Pic} alt="pic" />
             <h1>
               Made with <span style={{ color: "#d30000" }}>❤</span> by
               <a

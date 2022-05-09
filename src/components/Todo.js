@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+// components
+import TodoForm from "./TodoForm";
 // icons
 import { MdModeEditOutline } from "react-icons/md";
 import { TiDelete } from "react-icons/ti";
-import TodoForm from "./TodoForm";
 
 const Todo = ({ todos, deleteHandler, id, updateTodo }) => {
   // edit todo
