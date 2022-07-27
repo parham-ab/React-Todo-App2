@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // components
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
@@ -7,29 +7,39 @@ import Pic from "../assets/img/pic1.svg";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+  // localStorage
+  useEffect(() => {
+    let parsedData = localStorage.getItem("react-todos-list");
+    let savedData = JSON.parse(parsedData);
+    if (savedData != null) setTodos(savedData);
+  }, []);
   // Add new todo
   const addTodo = (todo) => {
-    //   Prevent from adding empty text
+    // Prevent to adding empty text
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
     const newTodo = [...todos, todo];
+    localStorage.setItem("react-todos-list", JSON.stringify(todos));
     setTodos(newTodo);
   };
   // Delete a todo from the list
   const deleteHandler = (id) => {
     const newValue = [...todos].filter((item) => item.id !== id);
+    const filtered = newValue.filter((item) => item.id !== id);
+    localStorage.setItem("react-todos-list", JSON.stringify(filtered));
     setTodos(newValue);
   };
   // Edit todo
   const updateTodo = (todoId, todoValue) => {
-    //   Prevent from adding empty text
+    //   Prevent to adding empty text while updating
     if (!todoValue.text || /^\s*$/.test(todoValue.text)) {
       return;
     }
     setTodos((prev) =>
       prev.map((item) => (item.id === todoId ? todoValue : item))
     );
+    localStorage.setItem("react-todos-list", JSON.stringify(todos));
   };
 
   return (
