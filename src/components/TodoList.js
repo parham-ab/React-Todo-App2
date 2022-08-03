@@ -35,10 +35,12 @@ const TodoList = () => {
     if (!todoValue.text || /^\s*$/.test(todoValue.text)) {
       return;
     }
-    setTodos((prev) =>
-      prev.map((item) => (item.id === todoId ? todoValue : item))
+    const edittedData = todos.map((item) =>
+      item.id === todoId ? todoValue : item
     );
-    localStorage.setItem("react-todos-list", JSON.stringify(todos));
+    setTodos(edittedData);
+    console.log(edittedData);
+    localStorage.setItem("react-todos-list", JSON.stringify(edittedData));
   };
 
   return (
