@@ -39,7 +39,6 @@ const TodoList = () => {
       item.id === todoId ? todoValue : item
     );
     setTodos(edittedData);
-    console.log(edittedData);
     localStorage.setItem("react-todos-list", JSON.stringify(edittedData));
   };
 

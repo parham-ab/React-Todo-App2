@@ -22,3 +22,20 @@ svg {
   font-size: 1.5rem;
   cursor: pointer;
 }
+// scroll bar
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(158, 158, 158);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(187, 187, 187);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(207, 207, 207);
+}
