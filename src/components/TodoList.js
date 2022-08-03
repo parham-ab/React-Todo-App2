@@ -20,14 +20,13 @@ const TodoList = () => {
       return;
     }
     const newTodo = [...todos, todo];
-    localStorage.setItem("react-todos-list", JSON.stringify(todos));
+    localStorage.setItem("react-todos-list", JSON.stringify(newTodo));
     setTodos(newTodo);
   };
   // Delete a todo from the list
   const deleteHandler = (id) => {
     const newValue = [...todos].filter((item) => item.id !== id);
-    const filtered = newValue.filter((item) => item.id !== id);
-    localStorage.setItem("react-todos-list", JSON.stringify(filtered));
+    localStorage.setItem("react-todos-list", JSON.stringify(newValue));
     setTodos(newValue);
   };
   // Edit todo
