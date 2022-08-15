@@ -6,7 +6,7 @@ import { SiAddthis } from "react-icons/si";
 import { MdCloudDone } from "react-icons/md";
 
 const TodoForm = (props) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(props.edit ? props.edit.value : "");
   const inputRef = useRef();
   // changeHandler
   const changeHandler = (e) => {
