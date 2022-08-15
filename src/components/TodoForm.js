@@ -28,35 +28,19 @@ const TodoForm = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      {!props.edit ? (
-        <div className="fieldContainer">
-          <input
-            type="text"
-            name="text"
-            placeholder="Add Todo..."
-            value={input}
-            onChange={changeHandler}
-            ref={inputRef}
-          />
-          <button className="addBtn">
-            <SiAddthis />
-          </button>
-        </div>
-      ) : (
-        <div className="updateField">
-          <input
-            type="text"
-            name="text"
-            placeholder="Update Todo..."
-            value={input}
-            onChange={changeHandler}
-            ref={inputRef}
-          />
-          <button className="updateBtn">
-            <MdCloudDone />
-          </button>
-        </div>
-      )}
+      <div className={!props.edit ? "fieldContainer" : "updateField"}>
+        <input
+          type="text"
+          name="text"
+          placeholder={!props.edit ? "Add Todo..." : "Update Todo..."}
+          value={input}
+          onChange={changeHandler}
+          ref={inputRef}
+        />
+        <button className={!props.edit ? "addBtn" : "updateBtn"}>
+          {!props.edit ? <SiAddthis /> : <MdCloudDone />}
+        </button>
+      </div>
     </form>
   );
 };
